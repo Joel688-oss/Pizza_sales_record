@@ -44,20 +44,41 @@ FROM pizza_sales2
 GROUP BY pizza_name, pizza_size
 ORDER BY 3 DESC;
 
+SELECT pizza_name, SUM(total_price) AS Income_Ranking
+FROM pizza_sales2
+GROUP BY pizza_name
+ORDER BY 2 DESC;
+
 SELECT pizza_name, pizza_size, SUM(quantity) AS Order_Ranking
 FROM pizza_sales2
 GROUP BY pizza_name, pizza_size
 ORDER BY 3 DESC;
+
+SELECT pizza_name, SUM(quantity) AS Order_Ranking
+FROM pizza_sales2
+GROUP BY pizza_name
+ORDER BY 2 DESC;
+
 
 SELECT pizza_name, pizza_size, SUM(total_price) AS income_Ranking
 FROM pizza_sales2
 GROUP BY pizza_name, pizza_size
 ORDER BY 3 DESC;
 
+SELECT pizza_name, SUM(total_price) AS income_Ranking
+FROM pizza_sales2
+GROUP BY pizza_name
+ORDER BY 2 DESC;
+
 SELECT pizza_category, pizza_size, SUM(quantity) AS category_rankings
 FROM pizza_sales2
 GROUP BY pizza_category, pizza_size
 ORDER BY 3 DESC;
+
+SELECT pizza_category, SUM(quantity) AS category_rankings
+FROM pizza_sales2
+GROUP BY pizza_category
+ORDER BY 2 DESC;
 
 SELECT *
 FROM pizza_sales2;
